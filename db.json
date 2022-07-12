@@ -1,0 +1,56 @@
+{
+  "activite": [],
+  "users": [
+    {
+      "id": 1,
+      "name": "test",
+      "email": "test@gmail.com",
+      "password": "12345678",
+      "role": "admin"
+    },
+    {
+      "name": "monkey d. User",
+      "email": "monkey@gmail.com",
+      "password": "123456789",
+      "role": "user",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "freddy",
+      "email": "freddy@gmail.com",
+      "password": "123456789",
+      "neighborhood": "",
+      "role": "admin"
+    }
+  ],
+  "roles": [
+    {
+      "id": 1,
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "role": "user"
+    }
+  ],
+  "clients": [
+    {
+      "name": "naz",
+      "number": "16151516515",
+      "neighborhood": "east blue",
+      "email": "naz@gmail.com",
+      "id": 13
+    },
+    {
+      "name": "fred",
+      "number": "16881516515",
+      "neighborhood": "east rouge",
+      "email": "fred@gmail.com",
+      "id": 14
+    }
+  ],
+  "activite": [
+
+  ]
+}

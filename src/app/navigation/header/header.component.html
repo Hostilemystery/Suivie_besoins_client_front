@@ -1,0 +1,85 @@
+<!-- <mat-toolbar>
+  <mat-toolbar-row class="justify-content-between">
+    <button mat-icon-button (click)="toggleSidebar()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div class="row mr-2 ml-auto">
+      <ul class="row m-0 align-items-center">
+        <li>
+          <button
+            mat-button
+            [matMenuTriggerFor]="menu"
+            class="user mt-2 d-flex align-items-center"
+          >
+          <img src="./assets/user.jpg" alt="" class="user-image2 mr-1 p-2" />
+            <img src="./assets/user.jpg" alt="" class="user-image mr-1 p-2" />
+
+            User Name
+            <mat-icon class="user-image-icon ml-1"
+              >keyboard_arrow_down</mat-icon
+            >
+          </button>
+          <mat-menu #menu="matMenu" yPosition="above">
+            <button mat-menu-item>
+              <mat-icon>exit_to_app</mat-icon>
+              <span>Logout</span>
+            </button>
+          </mat-menu>
+        </li>
+      </ul>
+    </div>
+  </mat-toolbar-row>
+  <mat-icon class="user-image-icon ml-1">keyboard_arrow_down</mat-icon>
+</mat-toolbar> -->
+
+<mat-toolbar>
+
+  <button mat-icon-button (click)="toggleSidebar()" id="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+
+  <button mat-icon-button style="margin-left: 70px; position: relative;" (click)="openDialog()">
+    <span class="material-icons">mail</span>
+  </button>
+
+  <div style="margin-left: 30%;">
+    {{ day }}
+  </div>
+  <div style="margin-left:2%">{{ hour }}: &nbsp;</div>
+  <div>{{ minute }}: &nbsp;</div>
+  <div>{{ second }} &nbsp;</div>
+  <div style="font-size: 13px;">{{ ampm }}</div>
+
+  <!-- <a routerLink="#" mat-button id="mail"><span class="material-icons">mail</span></a> -->
+  <div class="spacer">
+
+  </div>
+  <!-- <button class="user mt-2 d-flex align-items-center" ><span class="material-icons">person</span>Username
+  </button> -->
+
+  <button mat-icon-button style="margin-right: 70px; position: relative;" [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" >
+    <span class="material-icons">person</span><span style="font-size: large;font-weight: bold; color:#818cf8">{{ user }}</span>
+  </button>
+
+
+  <!-- <button mat-icon-button style="margin-right: 70px; position: relative;">
+    <span class="material-icons">person</span>Username
+  </button> -->
+
+  <!-- <button class="user mt-2 d-flex align-items-center" routerLink="#"><span class="material-icons red-color" >settings_power</span> Logout</button> -->
+  <mat-menu #menu="matMenu">
+  <button mat-menu-item style="margin-right: 30px;  position: relative;" (click)="logout()">
+    <span class="material-icons red-color" >settings_power</span>Logout
+  </button>
+</mat-menu>
+</mat-toolbar>
+
+
+
+
+
+
+
+
+

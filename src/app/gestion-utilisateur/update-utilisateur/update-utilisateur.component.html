@@ -1,0 +1,46 @@
+<nav class="navbar navbar-light bg-primary">
+  <div class="container-fluid">
+    <h1>
+      User details
+    </h1>
+  </div>
+</nav>
+<form [formGroup]="formValue">
+  <div class="mb-3">
+    <label for="exampleInputName" class="form-label">Name</label>
+    <input type="text" class="form-control" formControlName="name" id="exampleInputName" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputNumber" class="form-label">Email</label>
+    <input type="email" class="form-control" formControlName="email" id="exampleInputNumber">
+  </div>
+
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Password</label>
+    <input type="password" class="form-control" formControlName="password" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+
+  <div class="mb-3">
+  <label for="exampleInputNumber" class="form-label">Role</label>
+  <div class="col-sm-10">
+    <select name="RoleData" aria-label="RoleData" class="form-control" formControlName="type_utilisateur_id">
+      <option>--select Role--</option>
+      <option *ngFor="let rol of RoleData" value="{{ rol.id }}">
+        {{rol.role}}
+      </option>
+    </select>
+  </div>
+  </div>
+</form>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-12 bg-light text-right">
+          <button type="submit" class="btn btn-primary" id="addButton" [disabled]="!formValue.valid" (click)="updateUser()" >{{ actionBtn }}</button>
+          <button type="button" class="btn btn-warning"  (click)="onClose()" id="closeButton">Close</button>
+      </div>
+  </div>
+</div>
+
+

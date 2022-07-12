@@ -1,0 +1,55 @@
+<nav class="navbar navbar-light bg-primary">
+  <div class="container-fluid">
+    <h1>
+      Envoyer Mail
+    </h1>
+  </div>
+</nav>
+<br>
+<form [formGroup]="formValue">
+
+
+  <div class="progress form-group" *ngIf="progress > 0">
+    <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width.%]="progress">
+    </div>
+</div>
+
+  <div class="mb-3">
+    <label for="exampleInputNumber" class="form-label">Mail du client</label>
+    <div class="col-sm-10">
+      <select name="RoleData" aria-label="RoleData" class="form-control" formControlName="email">
+        <option>--select Mail--</option>
+        <option *ngFor="let rol of RoleData">
+          {{rol.email}}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputName" class="form-label">Subject</label>
+    <input type="text" class="form-control" formControlName="subject" id="exampleInputName" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputNumber" class="form-label">content</label>
+    <textarea class="form-control" formControlName="content" name="Comment">
+    </textarea>
+  </div>
+
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Fichier</label>
+    <input type="file" class="form-control" formControlName="document" #fileInput id="exampleInputEmail1" aria-describedby="emailHelp" (change)="onFileChanged($event)">
+  </div>
+
+
+
+</form>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-12 bg-light text-right">
+          <button type="submit" class="btn btn-primary" id="addButton" [disabled]="!formValue.valid" (click)="postMail()" >Submit</button>
+          <button type="button" class="btn btn-warning"  (click)="onClose()" id="closeButton">Cancel</button>
+      </div>
+  </div>
+</div>

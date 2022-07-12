@@ -1,0 +1,94 @@
+<div class="container-fluid page">
+  <div class="d-flex page__box p-3 mt-2">Dashboard</div>
+  <div class="page__content shadow p-3 position-relative">
+
+
+    <div class="content">
+      <div class="cards">
+        <a routerLink="/dashboard/Gestion-client" style=" text-decoration: none;">
+          <div class="card" >
+              <div class="box">
+                  <h1>{{ countClient }}</h1>
+                  <h3>Clients</h3>
+              </div>
+              <div class="icon-case">
+                  <img src="../../assets/images/people_40px.png" alt="">
+              </div>
+          </div>
+
+        </a>
+        <div *ngIf="isShown">
+          <a routerLink="/dashboard/Gestion-utilisateur" style=" text-decoration: none;">
+            <div class="card">
+                <div class="box">
+                    <h1>{{ countUser }}</h1>
+                    <h3>Utilisateurs</h3>
+                </div>
+                <div class="icon-case">
+                    <img src="../../assets/images/administrator_male_40px.png" alt="">
+                </div>
+            </div>
+          </a>
+      </div>
+          <a routerLink="/dashboard/Gestion-service" style=" text-decoration: none;">
+            <div class="card">
+                <div class="box">
+                    <h1>{{ countService }}</h1>
+                    <h3>Services</h3>
+                </div>
+                <div class="icon-case">
+                    <img src="../../assets/images/business_30px.png" alt="">
+                </div>
+            </div>
+        </a>
+
+      </div>
+      <br>
+      <!-- <br> -->
+
+      <!-- <div class="digitalClock" style="margin-top:10%">
+        <div class="dayTitle">
+          {{ day }}
+        </div>
+        <div class="digitalTime">
+          <div>{{ hour }}: &nbsp;</div>
+          <div>{{ minute }}: &nbsp;</div>
+          <div>{{ second }}: &nbsp;</div>
+          <div class="ampm">{{ ampm }}</div>
+        </div>
+      </div> -->
+
+
+      <carousel [height]="400" [autoplay]="true" [images]="images" [cellWidth]="700"  [cellsToShow]="4" arrowsTheme="dark" [autoplayInterval]="1500" [pauseOnHover]="true"   transitionTimingFunction="ease-in-out" [loop]="true" >
+        <!-- <div class="carousel-cell">
+            <img src="../../assets/images/msg657925926-25437.jpg" alt="1">
+        </div>
+        <div class="carousel-cell" >
+          <img src="../../assets/images/msg657925926-25438.jpg" alt="2">
+        </div>
+        <div class="carousel-cell">
+          <img src="../../assets/images/msg657925926-25439.jpg" alt="3">
+        </div>
+        <div class="carousel-cell">
+          <img src="../../assets/images/msg657925926-25440.jpg" alt="4">
+        </div>
+        <div class="carousel-cell">
+          <img src="../../assets/images/msg657925926-25441.jpg" alt="5">
+        </div>
+        <div class="carousel-cell">
+          <img src="../../assets/images/msg657925926-25442.jpg" alt="6">
+        </div>
+        <div class="carousel-cell">
+          <img src="../../assets/images/msg657925926-25443.jpg" alt="7">
+        </div>
+        <div class="carousel-cell">
+          <img src="../../assets/images/msg657925926-25444.jpg" alt="8">
+        </div>
+        <div class="carousel-cell">
+          <img src="../../assets/images/msg657925926-25445.jpg" alt="9">
+        </div> -->
+    </carousel>
+
+
+  </div>
+</div>

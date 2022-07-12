@@ -1,0 +1,45 @@
+<div class="corp">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="text-center">
+            <div class="logo">
+              <!-- <img src="https://previews.123rf.com/images/tumana/tumana1705/tumana170500109/79254715-life-is-simple-hand-drawn-lettering-quote-isolated-on-the-white-background-.jpg" alt=""> -->
+              <img src="../../assets/images/logo2.jpg" alt="">
+            </div>
+            <div class="title"><strong>LIS</strong></div>
+            <div class="sub-title">LIFE IS SIMPLE</div>
+            <form  [formGroup]="loginForm" (ngSubmit)="login()">
+              <div class="mb-3">
+                <div class="userMail">
+                <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=" e-mail">
+                <span class="text-danger" *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('pattern','email')">Please enter a valid email</span>
+                </div>
+
+
+              </div>
+              <div class="mb-3">
+
+                <div class="password">
+                  <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1" placeholder="password" data-toggle="password">
+                  <span class="text-danger" *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')">The password is required</span>
+                  <span class="text-danger" *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('minlength','password')">the password has at least 8 characters</span>
+                </div>
+
+              </div>
+              <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
+            </form>
+            <div class="link">
+              <a href="#">Forgot Password</a>
+          </div>
+          <div>
+            <p style="color: red;">{{ message }}</p>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

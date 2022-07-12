@@ -1,0 +1,32 @@
+
+<div class="container-fluid page">
+  <div class="d-flex page__box p-3 mt-2">Gestion Service</div>
+  <div class="page__content shadow p-3 position-relative" style="overflow-wrap: break-word;">
+
+      <nav class="navbar navbar-light bg-primary">
+        <div class="container-fluid">
+          <h1>
+            Info du client
+          </h1>
+          <div class="d-flex">
+            <button class="btn btn-warning user mt-2 d-flex align-items-center" style="margin-right:50px;"
+            (click)="getprint(clientData.id)"><span class="material-icons"><span
+                class="material-icons">print</span></span>Print</button>
+            <button class="btn btn-danger user mt-2 d-flex align-items-center" routerLink="/dashboard/liste/{{ clientData.service_id }}"><span class="material-icons">keyboard_backspace</span>Retour</button>
+          </div>
+        </div>
+      </nav>
+      <br>
+      <ul>
+        <li><strong>Noms : </strong> {{ clientData.name }}</li>
+        <li><strong>Email : </strong> {{ clientData.email }}</li>
+        <li><strong>Numero : </strong> {{ clientData.number }}</li>
+        <li><strong>Quartier : </strong> {{ clientData.neighborhood }}</li>
+        <li><strong>Créer le : </strong> {{ clientData.created_at }}</li>
+        <li><strong>Service : </strong> {{ clientData.Service_Name }}</li>
+        <li><strong>Detaille du service : </strong> {{ clientData.detaille_service }}</li>
+      </ul>
+      <p></p>
+
+</div>
+</div>

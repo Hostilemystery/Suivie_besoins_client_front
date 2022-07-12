@@ -1,0 +1,31 @@
+<nav class="navbar navbar-light bg-primary">
+  <div class="container-fluid">
+    <h1>
+      Service details
+    </h1>
+  </div>
+</nav>
+<form [formGroup]="formValue">
+  <div class="mb-3">
+    <label for="exampleInputName" class="form-label">Service Image</label>
+    <input type="file" class="form-control" formControlName="image" id="exampleInputName" aria-describedby="emailHelp" (change)="onFileChanged($event)">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputNumber" class="form-label">Service Name</label>
+    <input type="text" class="form-control" formControlName="Service_Name" id="exampleInputNumber">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputNeigbourhood" class="form-label">Service Info</label>
+    <input type="text" class="form-control" formControlName="Info_Service" id="exampleInputNeigbourhood" aria-describedby="emailHelp">
+  </div>
+</form>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-12 bg-light text-right">
+          <button type="submit" class="btn btn-primary" id="addButton" [disabled]="!formValue.valid" (click)="postServiceDetails()">{{ actionBtn }}</button>
+          <button type="button" class="btn btn-warning"  (click)="onClose()" id="closeButton">Close</button>
+      </div>
+  </div>
+</div>
+
